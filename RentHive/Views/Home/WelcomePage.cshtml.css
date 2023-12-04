@@ -1,0 +1,32 @@
+﻿/*Animation for WelcomePage*/
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+
+/*making the text center;*/
+.text {
+    margin-top: 10px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-family: Poppins;
+}
+
+/*making the logo center; list of cshtml who use .CenterLogo (WelcomePage)*/
+.CenterLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}

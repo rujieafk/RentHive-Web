@@ -1,0 +1,359 @@
+html {
+    /*font-size: 14px;*/
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: Poppins;
+    background-color: #313538;
+    color: white;
+    /*margin-bottom: 60px;*/
+}
+
+/*This css stylesheet is for universal use*/
+/*Any CSHTML file can use the css*/
+
+/*size of the Logo; list of cshtml who use (WelcomePage,Login,DeleteAccount) */
+
+.table_label {
+    color: #F9B54A;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo {
+    width: 30%;
+    min-width: 200px;
+}
+
+/*list of cshtml who use: (Signup,Login)*/
+.myButton {
+    color: white;
+    border: 1px solid #F9B54A;
+    background-color: #F9B54A;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    width: 100%;
+    text-decoration: none;
+}
+
+    .myButton:hover {
+        background-color: transparent;
+        border: 1px solid #F9B54A;
+        color: #F9B54A;
+    }
+/*size of eye icon; list of cshtml who use: (Signup,Login)-------------------*/
+.show-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.hide-icon {
+    display: none;
+    width: 25px;
+    height: 25px;
+}
+/*-----------------------------------*/
+
+.home-index, .home-UserList {
+    width: 100%;
+}
+/*Side nav bar------------------------*/
+.side-nav {
+    width: 4%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(250, 112, 31, 0.05);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.5s;
+}
+
+    .side-nav:hover {
+        width: 140px;
+        transition: 0.3s;
+    }
+
+        .side-nav:hover .user {
+            width: 100%;
+            /*border-radius: 8px;*/
+            /*border: 1px solid grey;*/
+        }
+
+        .side-nav:hover .user-img {
+            margin: auto;
+            width: 80px;
+            transition: 0.3s;
+        }
+
+        .side-nav:hover .menu-text {
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-nav:hover .menu-item {
+            justify-content: flex-start;
+            transition: 0.3s;
+        }
+
+        .side-nav:hover .menu-item-active {
+            justify-content: flex-start;
+            /*border-bottom: 1px solid;*/
+            pointer-events: none;
+            transition: 0.3s;
+        }
+/*holds the img profile, name, username*/
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    font-size: 12px;
+    padding: 5px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+/*img profile style*/
+.user-img {
+    width: 40px;
+    margin-right: auto;
+    margin-left: 2px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+/*used by: Index */
+.user-img2 {
+    width: 50px;
+    height: 50px;
+}
+/*text style*/
+.user-name {
+    margin-top: 20px;
+    padding-left: 5px;
+    margin-right: 20px;
+}
+
+.user h2 {
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 15px;
+    margin: 5px;
+    width: 100%;
+}
+
+.menu-item {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+    .menu-item:hover {
+        border-bottom: 1px solid;
+    }
+/*.menu-item-active {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}*/
+.menu-icon {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.menu-text {
+    white-space: nowrap;
+    display: none;
+    color: white;
+    text-decoration: none;
+}
+
+    .menu-text:hover {
+        color: white; /*sampleeeeeeeeeeeeeeeeeeeeee*/
+    }
+/*-----------------------------------*/
+.close-button{
+    position: absolute;
+    right: 50px;
+    top: 40px;
+    border: none;
+    width: 50px;
+    background-color: transparent;
+}
+.close-icon{
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    color: #F9B54A;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .text:hover {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/*Used by: DeleteAccount, Logput*/
+.border1 {
+    border: 1px solid #E2A848;
+    width: 50%;
+    height: 80vh;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10vh auto 20px auto;
+}
+/*Used by: POPUPS Logout,Checker*/
+.border2 {
+    border: 1px solid #E2A848;
+    padding: 10px;
+    border-radius: 20px;
+    width: 30vw;
+    text-align: center;
+    margin: auto;
+    margin-top: 20vh;
+}
+
+.action-button {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+    .action-button:target {
+        display: block;
+    }
+
+.hive-title-holder {
+    margin-left: 90px;
+    padding-top: 30px;
+}
+
+.hive-border-holder {
+    border-radius: 10px;
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    border: 1px solid;
+    padding: 10px;
+
+    height: 400px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+/*Used by HiveUserList, HiverUserLog*/
+.table-content table {
+    width: 100%;
+}
+.sub-header {
+    display: flex;
+    gap: 1rem;
+}
+/*Css of search box and sorting button*/
+/*.sub-header {
+    display: flex;
+    gap: 1rem;
+}
+.dropdown .dropbtn {
+    border: 1px solid #F9B54A;
+    background-color: white;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.dropdown .dropdown-content {
+    width: 150px;
+    background-color: white;
+    margin-top: 10px;
+    position: absolute;
+    display: none;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.dropdown form button {
+    text-decoration: none;
+    display: block;
+    padding: 10px 10px;
+    font-size: 14px;
+}*/
+/*End of css*/
+.printbtn {
+    width: 164px;
+    height: 41px;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    width: 126px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+    float: right;
+}
+
+    .printbtn:hover {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+    .user-log-btn {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover {
+        background: rgba(246,186,77, 0.2);
+    }
+
+.printdiv {
+    width: 95%;
+    padding-left: 100px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

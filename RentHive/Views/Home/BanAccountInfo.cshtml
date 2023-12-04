@@ -1,0 +1,91 @@
+﻿@model RentHive.Models.UserDataGetter
+@{
+    ViewData["Title"] = "Deactivated Account Details";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            @* <a href="@Url.Action("Profile", "UserManagement",new { TempuserId = Model.Acc_id})"> *@
+            <img src="~/images/logo2.png" class="user-img" />
+            @* </a> *@
+            @* <div class="user-name">
+            <h2>@Model.Acc_DisplayName</h2>
+            <p>@Model.Acc_UserType</p>
+            </div> *@
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = ViewBag.Acc_id})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new {Acc_id = ViewBag.Acc_id})'">User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    <button class="close-button" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = ViewBag.Acc_id})'"><img class="close-icon" src="~/images/close.png"></button>
+
+    <div class="hive-title-holder">
+        <h1>Deactivated Account Details</h1>
+    </div>
+
+    <div class="details-border-holder">
+        <div class="details-holder">
+            <h3>Account Details : @Model.Acc_id @ViewBag.sample</h3>
+            <div class="acc-details-content">
+                <div class="col1">
+                    <p>Account name : @Model.Acc_FirstName @Model.Acc_MiddleName @Model.Acc_LastName</p>
+                    <p>Display name : @Model.Acc_DisplayName</p>
+                    <p>Birthdate : @Model.Acc_Birthdate</p>
+                    <p>Address : @Model.Acc_Address</p>
+                </div>
+                <div class="col2">
+                    <p>Contact number : @Model.Acc_PhoneNum</p>
+                    <p>Email : @Model.Acc_Email</p>
+                    <p>Password : @Model.Acc_Password</p>
+                    <p>Account type: @Model.Acc_UserType</p>
+                </div>
+            </div>
+        </div>
+        <div class="details-holder">
+            <h3>Unban this user</h3>
+            <form method="post" action="@Url.Action("banChanger")">
+                <input type="hidden" name="userId" value="@Model.Acc_id" />
+                <input type="hidden" name="Acc_id" value="@ViewBag.Acc_Id" />
+
+                <input type="hidden" name="setTimeBan" value=""/>
+                <button class="user-log-btn" type="submit">Unban</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="popup" class="action-button">
+    <div class="border2">
+        <h1>Log Out?</h1>
+        <div class="message">
+            <h4 style="color: white">Are you sure you want to log out?</h4>
+        </div>
+        <form method="post" action="@Url.Action("Logout", "UserManagement")">
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="#" class="btn btn-primary">No</a>
+        </form>
+    </div>
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}
+<script>
+    window.onpopstate = function () {
+        location.reload(); // Refresh the page when the back button is clicked
+    };
+    t
+</script>

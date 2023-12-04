@@ -1,0 +1,46 @@
+﻿@model RentHive.Models.UserDataGetter
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<div class="loginBox">
+    <form method="POST">
+        <center>
+            <img style="width: 105px; height: 78px; top: 100px" src="~/images/logo2.png" />
+            <div class="animate-renthive">R E N T H I V E</div>
+            <div class="animate-admin">ADMIN</div>
+        </center><br />
+
+
+        <input name="Acc_Email" class="loginInput" placeholder="Email" value="rujie@gmail.com" required /><br><br>
+
+        <div class="passwordInput">
+            <input name="Acc_Password" class="password-text" type="password" placeholder="Password" value="rujie12345" required />
+            <span class="toggle-password" id="togglePassword">
+                <img src="~/images/visible.png" id="showIcon" class="show-icon" />
+                <img src="~/images/hide.png" class="hide-icon" id="hideIcon" />
+            </span>
+        </div>
+        <div class="divForgetPass">
+            <button class="forgetPass" onclick="location.href='@Url.Action("","")'">Forgot Password?</button>
+        </div>
+
+
+        <button type="submit" class="loginBtn">Login</button>
+    </form>
+
+    <button class="forgetPass" onclick="location.href='@Url.Action("ErrorMessage","ErrorView")'">sample</button>
+
+</div>
+<footer style="width: 407px; height: 39px; left: 479px; top: 580px; position: absolute; text-align: center; color: white; font-size: 12px; font-family: Poppins; font-weight: 500; word-wrap: break-word">© 2023 Renthive | All rights reserved </footer>
+<script>
+    $(document).ready(function () {
+        var notificationType = '@ViewBag.Noti_Type';
+        var notificationMessage = '@ViewBag.Noti_Message';
+
+        if (notificationType && notificationMessage) {
+            toastr[notificationType](notificationMessage);
+        }
+    });
+</script>

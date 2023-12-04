@@ -1,0 +1,55 @@
+﻿@model List<RentHive.Models.UserDataGetter>
+@{
+    ViewData["Title"] = "User's Posts List";
+}
+<div class="home-index">
+
+    <button class="close-button" onclick="goBack()"><img class="close-icon" src="~/images/close.png"></button>
+    
+    <div class="hive-border-holder">
+        <div class="table-content">
+            <table>
+                <tr>
+                    @* <p>@ViewBag.Acc_id --> admin id</p>
+                    <p>@ViewBag.userId --> selected user to visit </p> *@
+                    <th>Post ID<</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Date Posted</th>    
+                </tr>
+                @foreach (var printCopy in Model)
+                {
+                    <tr>
+                        <td>@printCopy.Post_id</td>
+                        <td>@printCopy.Post_Title</td>
+                        <td>
+                            @printCopy.Post_Status
+                        </td>
+                        <td>@printCopy.Post_DatePosted</td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+</div>
+
+    
+    
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}
+<script>
+    window.onpopstate = function () {
+        location.reload(); // Refresh the page when the back button is clicked
+    };
+
+    //For close button this will return to back
+    function goBack() {
+        window.history.back();
+    }
+</script>

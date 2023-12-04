@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Errorr Message";
+}
+<div class="container">
+    <div class="content">
+        <img src="~/images/error.png" style="width: 40px; height: auto; margin-bottom: 30px;"/>
+        @* <p>There was an error processing your request.</p> *@
+        <p>@ViewBag.ErrorMessage</p>
+
+        <button class="" onclick="location.href='@Url.Action("Login","UserManagement")'">Back to login</button>
+    </div>
+</div>
+@* <script>
+    //For close button this will return to back
+    function goBack() {
+        window.history.back();
+    }
+</script> *@

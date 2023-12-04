@@ -1,0 +1,102 @@
+﻿/*Profile stylesheet*/
+.profile-holder {
+    display: flex;
+    margin-top: 40px;
+}
+
+.column1, column2 {
+    flex: 1;
+}
+.close-button {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.profile-card {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: auto;
+    width: 70%;
+    top: 120px;
+}
+.upload-img-btn {
+    text-decoration: none;
+    border: 1px solid #FA701F;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+    .upload-img-btn:hover {
+        color: grey;
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+.profile-setting {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+input:read-only {
+    background-color: transparent; 
+    color: #666; 
+    cursor: auto;
+    border: 1px solid transparent; 
+    outline: none;
+}
+.profile-details {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.col2, .col3{
+    display: flex;
+}
+.editButton, .saveButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    outline: none;
+    border:none;
+}
+
+.saveButton {
+    background-color: green;
+    color: white;
+}
+.profile-details h5{
+    margin-top: 10px;
+}
+
+.underlined-input {
+    background: none; /* Removes the background */
+    border: none; /* Removes the border */
+    outline: none; /* Removes the focus highlight */
+    border-bottom: 1px solid #FA701F; /* Adds the underline */
+    padding: 5px; /* Adds some padding */
+    margin: 5px; /* Adds some margin */
+    color: white;
+}

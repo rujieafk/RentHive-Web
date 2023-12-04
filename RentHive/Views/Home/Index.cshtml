@@ -1,0 +1,205 @@
+﻿@model RentHive.Models.UserDataGetter
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            <img src="~/images/logo2.png" class="user-img" />
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = Model.Acc_id})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new {Acc_id = Model.Acc_id})'">User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="home-index">
+        <div style=" text-align:center; width: 100%; color: white; font-size: 50px; font-family: Poppins; font-weight: 800; word-wrap: break-word">
+            DASHBOARD
+        </div>
+    </div>
+
+    <div style="display:flex; gap: 1rem; padding: 10px;">
+        @* COLUMN 1 *@
+        @*border and fill sa edit profile*@
+        <div style="width: 325px; height: 513px; left: 152px; top: 112px; background: rgba(250, 112, 31, 0.05); border-radius: 22px; border: 1px #FA701F solid">
+            <br />
+            <center>
+                @if (!string.IsNullOrEmpty(Model.Images))
+                {
+                    byte[] imageBytes = Convert.FromBase64String(Model.Images);
+                    string imageSrc = string.Format("data:image/png;base64,{0}", Convert.ToBase64String(imageBytes));
+                    <img src="@imageSrc" style="left:152px; width: 160px; height: 160px; border-radius: 9999px;" alt="User Image" />
+                }
+                else
+                {
+                    <img id="img" src="~/images/user.png" style="left:152px; width: 160px; height: 160px; border-radius: 9999px;" />
+                }
+            </center>
+            <div style="width: 323px; height: 18px; text-align: center; color: white; font-size: 30px; font-family: Poppins; font-weight: 700; word-wrap: break-word" value="@Model.Acc_DisplayName">@Model.Acc_DisplayName</div>
+            <div class="DisplayData">@Model.Acc_UserType</div>
+
+            <div class="box">
+                <div class="Email">Email:</div>
+                <div class="Email-details">@Model.Acc_Email</div>
+            </div>
+            <box class="box">
+                <div class="ContactNo">Contact No:</div>
+                <div class="Contact-details">@Model.Acc_PhoneNum</div>
+            </box>
+            <div class="box">
+                <div class="Birthdate">Birthdate:</div>
+                <div class="Birthdate-details">@Model.Acc_Birthdate</div>
+            </div>
+            <div class="box">
+                <div class="Address">Address:</div>
+                <div class="Address-details">@Model.Acc_Address</div>
+            </div>
+            @*button to edit profile informations*@
+            <div class="box">
+                <br />
+                <button class="editProfile_btn" onclick="location.href='@Url.Action("Profile", "UserManagement",new { Acc_id = Model.Acc_id})'">EDIT PROFILE</button>
+            </div>
+        </div>
+
+        @* COLUMN 2 *@
+        <div style="display: flex; flex-direction: column;">
+            <div>
+                <div style="padding: 10px; height: 300px; background: rgba(250, 112, 31, 0.05); border-radius: 22px; border: 1px #FA701F solid">
+                    @* 4 BUTTONS *@
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="deactivatedPost" style="width: 100%;" onclick="location.href='@Url.Action("DeactPosts", "Home", new {Acc_id = Model.Acc_id})'">Deactivated Posts</button>
+                        <button class="bannedUser" style="width: 70%;" onclick="location.href='@Url.Action("BanAccounts", "Home", new {Acc_id = Model.Acc_id})'">Banned Users</button>
+                    </div>
+                    <div style="display: flex;">
+                        <button class="deactivatedAcc" style="width: 50%;" onclick="location.href='@Url.Action("UserVerification", "Home", new {Acc_id = Model.Acc_id})'">Verification</button>
+                        <button class="unresolvedReports" style="width: 100%;" onclick="location.href='@Url.Action("Reports", "Home", new {Acc_id = Model.Acc_id})'">Unresolved Reports</button>
+                    </div>
+                    @* END OF 4 BUTTONS *@
+                </div> @*border and fill sa 4 buttons*@
+            </div>
+            <br />
+
+            <div style="display: flex; gap: 1rem;">
+                <center>
+                    <div>
+                        @*total number of users*@
+                        <div style="width: 238px; height: 190px;">
+                            <div style="width: 238px; height: 180px; background: rgba(250, 112, 31, 0.05); border-radius: 22px; border: 1px #FA701F solid">
+                                <div style="width: 145px; height: 54px;text-align: center; color: white; font-size: 20px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Total Number of User</div>
+                                <div style="width: 70px; height: 53px; color: white; font-size: 50px; font-family: Poppins; font-weight: 700; word-wrap: break-word">@ViewBag.UserCount</div> @* ari ibutang kung pilay total users *@
+                                @*button to show all user*@<br />
+                                <div style="width: 221px; height: 36px;">
+                                    <button class="show_btn2" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new { Acc_id = Model.Acc_id})'">SHOW ALL</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+                <center>
+                    <div style="width: 238px; height: 180px;">
+                        <div style="width: 238px; height: 180px; background: rgba(250, 112, 31, 0.05); border-radius: 22px; border: 1px #FA701F solid">
+                            <div style="width: 167px; height: 54px; text-align: center; color: white; font-size: 20px; font-family: Poppins; font-weight: 700; word-wrap: break-word">Total Number of Administrators</div>
+                            <div style="width: 58px; height: 53px; color: white; font-size: 50px; font-family: Poppins; font-weight: 700;">@ViewBag.AdminCount</div> @*counting ni sa tanan administrator*@
+                            @*button to show all admin*@<br />
+                            <div style="width: 221px; height: 36px;">
+                                <button class="show_btn2" onclick="location.href='@Url.Action("HiveAdminList", "SystemManagement", new { Acc_id = Model.Acc_id})'">SHOW ALL</button>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+        @* COLUMN 3 *@
+        <div>
+            <div>
+                <div style="background: rgba(250, 112, 31, 0.05); border: 1px  #FA701F solid; border-radius: 22px; padding: 10px">
+                    <div>Total Revenue</div>
+                    <div style="color: white; font-size: 40px; font-family: Poppins; font-weight: 700;">
+                        @Model.Income
+                    </div>
+                </div>
+            </div><br />
+            <div>
+                @*LIVE DATE & TIME*@
+                <div class="dateBorder">
+                    <center>
+                        <div id="date" class="date"></div><br />
+                        <div id="time" class="time"></div>  @*DISPLAY TIME*@
+                    </center>
+                </div> @*DATE AND TIME BORDER AND FILL*@
+            </div>
+        </div>
+    </div>
+</div>
+<div id="popup" class="action-button">
+    <div class="border2">
+        <h1>Log Out?</h1>
+        <div class="message">
+            <h4 style="color: white">Are you sure you want to log out?</h4>
+        </div>
+        <form method="post" action="@Url.Action("Logout", "UserManagement")">
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="#" class="btn btn-primary">No</a>
+        </form>
+    </div>
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}
+<script>
+    window.onpopstate = function () {
+        location.reload(); // Refresh the page when the back button is clicked
+    };
+</script>
+<script>
+    // Function to update the date and time in words every second
+    function updateDate() {
+        const now = new Date();
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+        const dateInWords = now.toLocaleDateString('en-US', dateOptions);
+
+        const datetimeElement = document.getElementById('date');
+        datetimeElement.textContent = `${dateInWords}`;
+    }
+
+    // Call the function to initially display the date and time
+    updateDate();
+
+
+
+    function updateTime() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const hours12 = (hours % 12) || 12; // Convert 0 to 12
+        const timeString = `${hours12}:${minutes} ${ampm}`;
+        const timeElement = document.getElementById('time');
+        timeElement.textContent = timeString;
+    }
+
+    // Call the function to initially display the time
+    updateTime();
+
+    // Update the date and time every second
+    setInterval(updateDate, 1000);
+    setInterval(updateTime, 1000);
+
+</script>
+

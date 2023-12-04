@@ -1,0 +1,54 @@
+﻿/* FOR Print*/
+.details-holder {
+    margin-bottom: 20px; /* Adjust the value based on the desired spacing */
+    padding: 10px;
+}
+tr{
+    border: 1px solid;
+}
+td, th{
+    padding: 15px;
+}
+
+@media print {
+    body {
+        font-size: 12pt;
+        width: 100%;
+        margin: 10px;
+        color: black;
+    }
+
+#reportDetails {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+    #reportDetails table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #reportDetails th, #reportDetails td {
+        border: 1px solid #ddd;
+        padding: 5px;
+        text-align: left;
+    }
+
+    #reportDetails th {
+        background-color: #f2f2f2;
+    }
+
+    #reportDetails a {
+        color: #000; /* Change link color for printing */
+        text-decoration: none;
+    }
+
+    div {
+        page-break-after: always; /* Add page break after each div */
+    }
+
+
+}
+
+

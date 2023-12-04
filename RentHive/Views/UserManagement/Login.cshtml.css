@@ -1,0 +1,273 @@
+﻿.loginBox {
+    width: 323px;
+    height: 426px;
+    left: 521px;
+    top: 90px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.04);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+}
+
+.loginInput {
+    width: 271px;
+    height: 41px;
+    left: 0px;
+    top: 0px;
+    padding-left: 20px;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    font-family: Poppins;
+    font-weight: 300;
+    color: white;
+    border: 1px #FA701F solid;
+    font-size: 12px;
+}
+.loginBtn{
+    width: 164px;
+    height: 41px;
+    top: 370px;
+    left: 90px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    width: 126px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+    .loginBtn:hover {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+.passwordInput {
+    width: 271px;
+    height: 41px;
+}
+
+.password-text {
+    width: 271px;
+    height: 41px;
+    left: 0px;
+    top: 0px;
+    padding-left: 20px;
+    font-family: Poppins;
+    font-weight: 300;
+    color: white;
+    font-size: 12px;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+}
+
+.forgetPass {
+    color: white;
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+    text-decoration: none;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+
+
+.divForgetPass {
+    padding-right: 20px;
+    text-align: right;
+}
+
+
+
+.animate-renthive {
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    background-image: linear-gradient( -225deg, #F9CF5B 15%, #F9B249 29%, #F7852C 67%, #fff800 100% );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+}
+
+.toggle-password {
+    position: absolute;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 79%;
+    width: 8%;
+    top: 68%;
+}
+
+.animate-admin {
+    text-align: center;
+    color: #FF9353;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 800;
+    word-wrap: break-word;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+/*Animation for fade-in Login*/
+/*@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}*/
+
+/*Holds the logo and login form*/
+/*.Logincontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 25vh;
+}*/
+/*Border for LoginForm*/
+/*.LoginForm {
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+    height: 50vh;
+    width: 30vw;
+}*/
+/*Size of the logo*/
+/*.Loginlogo {
+    width: 100%;
+    max-width: 200px;
+}
+.InputTextbox1 {
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 200px;
+    border: none;
+    outline: none;
+}*/
+/*Animation for Login*/
+/*.TextboxHolder {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #E2A848;
+    background-color: transparent;
+    border-radius: 30px;
+    text-align: center;
+    margin: 15px 0px 0px 5px; 
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 89%;
+    width: 8%;
+}
+
+.password-text {
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 200px;
+    border: none;
+    outline: none;
+}*/
+/*Text forgot password*/
+/*._forgetpass {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #E4A948;
+    float: right;
+}
+    ._forgetpass:hover {
+        color: white;
+    }*/
+
+/*Text typing animation */
+/*.WelcomeText {
+    margin-top: 10px;
+    font-size: 2em;
+    color: white;
+    letter-spacing: 5px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s*/ /* steps(20),cursor .4s step-end infinite alternate*/ /*;
+}
+.sub-text {
+    color: #E4A948;
+    padding: 10px 0px;
+    font-size: 12px;
+    border-right: 5px solid white;
+    letter-spacing: 5px;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s, cursor .4s step-end infinite alternate;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}*/

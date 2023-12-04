@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Delete Account";
+}
+
+<div class="border1">
+    <div class="delete-logo">
+        <img src="~/images/delete.png" class="logo" />
+    </div>
+    <div>
+        <div class="message">
+            <h4 style="color: white">Warning: You are about to delete your account.</h4>
+        </div>
+        <form method="post">
+            <input type="submit" name="confirmation" value="yes" class="btn btn-danger" />
+            <input type="submit" name="confirmation" value="no" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}

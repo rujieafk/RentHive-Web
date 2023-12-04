@@ -1,0 +1,131 @@
+﻿@model List<RentHive.Models.UserDataGetter>
+@{
+    ViewData["Title"] = "RentHive Users Activity Log";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            @* <a href="@Url.Action("Profile", "UserManagement",new { TempuserId = Model.Acc_id})"> *@
+            <img src="~/images/logo2.png" class="user-img" />
+            @* </a> *@
+            @* <div class="user-name">
+            <h2>@Model.Acc_DisplayName</h2>
+            <p>@Model.Acc_UserType</p>
+            </div> *@
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = ViewBag.Acc_id})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new {Acc_id = ViewBag.Acc_id})'"> User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    <button class="close-button" onclick="location.href='@Url.Action("HiveUserDetails", "SystemManagement", new {Acc_id = ViewBag.Acc_id, userId = ViewBag.userId})'"><img class="close-icon" src="~/images/close.png"></button>
+
+    <div class="hive-title-holder">
+        <h1>User Activity Log</h1>
+        <div>
+            <label for="searchId">Search :</label>
+            <input type="text" id="searchId" oninput="searchById()" />
+        </div>
+    </div>
+    <div class="hive-border-holder">
+        <div class="table-content">
+            <table>
+                <tr>
+                    @* <th><a href="@Url.Action("HiveUserLog", new { SortBy = "ul_id" , Acc_id = ViewBag.Acc_id, userId = ViewBag.userId})">ID</a></th> *@
+                    <th><a href="@Url.Action("HiveUserLog", new { SortBy = "ul_Origin" , Acc_id = ViewBag.Acc_id , userId = ViewBag.userId,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName,Temp_FirstName = ViewBag.Temp_FirstName, Temp_MiddleName = ViewBag.Temp_MiddleName, Temp_LastName = ViewBag.Temp_LastName})">Section</a></</th>
+                    <th><a href="@Url.Action("HiveUserLog", new { SortBy = "ul_Timestamp" , Acc_id = ViewBag.Acc_id , userId = ViewBag.userId,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName,Temp_FirstName = ViewBag.Temp_FirstName, Temp_MiddleName = ViewBag.Temp_MiddleName, Temp_LastName = ViewBag.Temp_LastName})">Activity Time</a></</th>
+                    <th><a href="@Url.Action("HiveUserLog", new { SortBy = "ul_Action" , Acc_id = ViewBag.Acc_id, userId = ViewBag.userId,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName,Temp_FirstName = ViewBag.Temp_FirstName, Temp_MiddleName = ViewBag.Temp_MiddleName, Temp_LastName = ViewBag.Temp_LastName})">Activity Information</a></</th>
+                    <th><a href="@Url.Action("HiveUserLog", new { SortBy = "ul_SysResponse" , Acc_id = ViewBag.Acc_id, userId = ViewBag.userId,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName,Temp_FirstName = ViewBag.Temp_FirstName, Temp_MiddleName = ViewBag.Temp_MiddleName, Temp_LastName = ViewBag.Temp_LastName})">Activity Response</a></</th>
+                </tr>
+                @foreach (var userLog in Model)
+                {
+                    <tr>
+                        @* <td>@userLog.ul_id</td> *@
+                        <td>@userLog.ul_Origin</td>
+                        <td>@userLog.ul_Timestamp</td>
+                        <td>@userLog.ul_Action</td>
+                        <td>@userLog.ul_SysResponse</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class"printdiv">
+        <button onclick="printReport()" class="printbtn">Print</button>
+    </div>
+</div>
+
+
+<div id="PrintFile" class="action-button">
+    <div style="padding: 20px; width: 100%;">
+        <div class="view-container">
+            <img src="~/images/logo2.png" class="user-img" /><h3>RENTHIVE</h3>
+            <br />
+            <h5>Account name : @ViewBag.Acc_FirstName @ViewBag.Acc_MiddleName @ViewBag.Acc_LastName</h5>
+            <p>Date: @ViewBag.CurrentDate &nbsp&nbsp; Time: @ViewBag.CurrentTime</p>
+
+            <h2>User Log</h2>
+                <table>
+                    <tr>
+                        <th>Section</th>
+                        <th>Activity Time</th>
+                        <th>Activity Information</th>
+                        <th>Activity Response</th>
+                    </tr>
+                    @foreach (var userLog in Model)
+                    {
+                        <tr>
+                            <td>@userLog.ul_Origin</td>
+                            <td>@userLog.ul_Timestamp</td>
+                            <td>@userLog.ul_Action</td>
+                            <td>@userLog.ul_SysResponse</td>
+                        </tr>
+                    }
+                </table>
+            <div class="author">File created by: @ViewBag.Temp_FirstName @ViewBag.Temp_MiddleName @ViewBag.Temp_LastName</div>
+        </div>
+    </div>
+</div>
+
+<div id="popup" class="action-button">
+    <div class="border2">
+        <h1>Log Out?</h1>
+        <div class="message">
+            <h4 style="color: white">Are you sure you want to log out?</h4>
+        </div>
+        <form method="post" action="@Url.Action("Logout", "UserManagement")">
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="#" class="btn btn-primary">No</a>
+        </form>
+    </div>
+</div>
+<div class="DataHolder">
+    <input type="hidden" name="Acc_id" value="@ViewBag.Acc_Id" />
+    <input type="hidden" name="Acc_FirstName" value="@ViewBag.Acc_FirstName" />
+    <input type="hidden" name="Acc_MiddleName" value="@ViewBag.Acc_MiddleName" />
+    <input type="hidden" name="Acc_LastName" value="@ViewBag.Acc_LastName" />
+    <input type="hidden" name="Acc_DisplayName" value="@ViewBag.Acc_DisplayName" />
+    <input type="hidden" name="Acc_UserType" value="@ViewBag.Acc_UserType" />
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}
+<script>
+    window.onpopstate = function () {
+        location.reload(); // Refresh the page when the back button is clicked
+    };
+</script>

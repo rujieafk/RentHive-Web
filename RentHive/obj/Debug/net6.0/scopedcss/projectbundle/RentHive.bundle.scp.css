@@ -1,0 +1,1391 @@
+/* _content/RentHive/Views/ErrorView/ErrorMessage.cshtml.rz.scp.css */
+/*.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: white;
+    padding: 20px;
+    width: 100vw;
+    color: black;
+    text-align: center
+}
+*/
+.container[b-lv6us5eoty] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust the height based on your design preferences */
+}
+
+.content[b-lv6us5eoty] {
+    text-align: center;
+}
+
+h3[b-lv6us5eoty] {
+    color: #333; 
+}
+
+p[b-lv6us5eoty] {
+    color: #666;
+}
+button[b-lv6us5eoty]{
+    background-color: #007BFF; 
+    color: #fff;
+    padding: 10px 20px; 
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px; 
+}
+
+button:hover[b-lv6us5eoty] {
+    background-color: #0056b3;
+}
+/* _content/RentHive/Views/Home/BanAccountInfo.cshtml.rz.scp.css */
+.details-border-holder[b-ibwl7o3res] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-ibwl7o3res] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-ibwl7o3res] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-ibwl7o3res], .col2[b-ibwl7o3res] {
+    width: 100%;
+}
+
+    .col1 p[b-ibwl7o3res], .col2 p[b-ibwl7o3res] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-ibwl7o3res] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-ibwl7o3res] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/Home/DeactPostInfo.cshtml.rz.scp.css */
+.details-border-holder[b-gh6r6hjg7b] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-gh6r6hjg7b] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-gh6r6hjg7b] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-gh6r6hjg7b], .col2[b-gh6r6hjg7b] {
+    width: 100%;
+}
+
+    .col1 p[b-gh6r6hjg7b], .col2 p[b-gh6r6hjg7b] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-gh6r6hjg7b] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-gh6r6hjg7b] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/Home/DeactPosts.cshtml.rz.scp.css */
+.details-border-holder[b-acx7ptq5v2] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-acx7ptq5v2] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-acx7ptq5v2] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-acx7ptq5v2], .col2[b-acx7ptq5v2] {
+    width: 100%;
+}
+
+    .col1 p[b-acx7ptq5v2], .col2 p[b-acx7ptq5v2] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-acx7ptq5v2] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-acx7ptq5v2] {
+        background: rgba(246,186,77, 0.2);
+    }
+
+.border3[b-acx7ptq5v2] {
+    border: 1px solid #E2A848;
+    padding: 40px 30px 100px 30px;
+    border-radius: 20px;
+    margin: 100px;
+}
+/* _content/RentHive/Views/Home/Index.cshtml.rz.scp.css */
+.show_btn[b-xlcmrfej9m] {
+    width: 221px;
+    height: 36px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+
+
+    .show_btn:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.show_btn2[b-xlcmrfej9m] {
+    width: 221px;
+    height: 36px;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+    .show_btn2:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.editProfile_btn[b-xlcmrfej9m] {
+    width: 296px;
+    height: 36px;
+    color: white;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+}
+
+    .editProfile_btn:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.unresolvedReports[b-xlcmrfej9m], .deactivatedAcc[b-xlcmrfej9m], .deactivatedPost[b-xlcmrfej9m], .bannedUser[b-xlcmrfej9m] {
+    height: 113px;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin: 10px;
+}
+
+    .unresolvedReports:hover[b-xlcmrfej9m], .deactivatedAcc:hover[b-xlcmrfej9m], .deactivatedPost:hover[b-xlcmrfej9m], .bannedUser:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.DisplayData[b-xlcmrfej9m] {
+    margin-top: 25px;
+    width: 323px;
+    height: 18px;
+    text-align: center;
+    color: #FA701F;
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.box[b-xlcmrfej9m] {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Email[b-xlcmrfej9m], .ContactNo[b-xlcmrfej9m], .Birthdate[b-xlcmrfej9m], .Address[b-xlcmrfej9m] {
+    color: white;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.Email-details[b-xlcmrfej9m], .Contact-details[b-xlcmrfej9m], .Birthdate-details[b-xlcmrfej9m], .Address-details[b-xlcmrfej9m] {
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+.date[b-xlcmrfej9m] {
+    width: 300px;
+    height: 143px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.time[b-xlcmrfej9m] {
+    width: 167px;
+    height: 34px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.dateBorder[b-xlcmrfej9m] {
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    height: 380px;
+    padding-top: 60px;
+}
+/* _content/RentHive/Views/Home/ReportDetails.cshtml.rz.scp.css */
+.details-border-holder[b-na0yj3rrxl] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-na0yj3rrxl] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-na0yj3rrxl] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-na0yj3rrxl], .col2[b-na0yj3rrxl] {
+    width: 100%;
+}
+
+    .col1 p[b-na0yj3rrxl], .col2 p[b-na0yj3rrxl] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-na0yj3rrxl] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-na0yj3rrxl] {
+        background: rgba(246,186,77, 0.2);
+    }
+
+.base64size[b-na0yj3rrxl] {
+    padding: 20px;
+    border-radius: 50px;
+    width: 80%;
+    height: auto;
+}
+/* _content/RentHive/Views/Home/Reports.cshtml.rz.scp.css */
+.details-border-holder[b-m6lt35foel] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-m6lt35foel] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-m6lt35foel]{
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-m6lt35foel], .col2[b-m6lt35foel] {
+    width: 100%;
+}
+
+    .col1 p[b-m6lt35foel], .col2 p[b-m6lt35foel] {
+        margin: 10px;
+    }
+
+
+
+.border3[b-m6lt35foel] {
+    border: 1px solid #E2A848;
+    padding: 40px 30px 100px 30px;
+    border-radius: 20px;
+    margin: 100px ;
+}
+
+/* _content/RentHive/Views/Home/UserVerification.cshtml.rz.scp.css */
+.details-border-holder[b-xbdpjdp76q] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-xbdpjdp76q] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-xbdpjdp76q] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-xbdpjdp76q], .col2[b-xbdpjdp76q] {
+    width: 100%;
+}
+
+    .col1 p[b-xbdpjdp76q], .col2 p[b-xbdpjdp76q] {
+        margin: 10px;
+    }
+.border3[b-xbdpjdp76q] {
+    border: 1px solid #E2A848;
+    padding: 40px 30px 100px 30px;
+    border-radius: 20px;
+    margin: 100px;
+}
+/* _content/RentHive/Views/Home/UserVerification_Details.cshtml.rz.scp.css */
+.details-border-holder[b-mmmudo4lx3] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-mmmudo4lx3] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-mmmudo4lx3] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-mmmudo4lx3], .col2[b-mmmudo4lx3] {
+    width: 100%;
+}
+
+    .col1 p[b-mmmudo4lx3], .col2 p[b-mmmudo4lx3] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-mmmudo4lx3] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-mmmudo4lx3] {
+        background: rgba(246,186,77, 0.2);
+    }
+
+.base64size[b-mmmudo4lx3] {
+    padding: 20px;
+    border-radius: 50px;
+    width: 80%;
+    height: auto;
+}
+/* _content/RentHive/Views/Home/WelcomePage.cshtml.rz.scp.css */
+/*Animation for WelcomePage*/
+@keyframes fadeOut-b-8ey1npiq9w {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#fade-out[b-8ey1npiq9w] {
+    animation: fadeOut-b-8ey1npiq9w 2s ease-in-out forwards;
+}
+
+
+/*making the text center;*/
+.text[b-8ey1npiq9w] {
+    margin-top: 10px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-family: Poppins;
+}
+
+/*making the logo center; list of cshtml who use .CenterLogo (WelcomePage)*/
+.CenterLogo[b-8ey1npiq9w] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+/* _content/RentHive/Views/PostMonitoring/HiveUserPostDetails.cshtml.rz.scp.css */
+.details-border-holder[b-l11xp766ve] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-l11xp766ve] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-l11xp766ve] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-l11xp766ve], .col2[b-l11xp766ve] {
+    width: 100%;
+}
+
+    .col1 p[b-l11xp766ve], .col2 p[b-l11xp766ve] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-l11xp766ve] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+
+    .user-log-btn:hover[b-l11xp766ve] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/PostMonitoring/SelectedPostDetails.cshtml.rz.scp.css */
+.details-border-holder[b-l8vnta5sp1] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-l8vnta5sp1] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-l8vnta5sp1] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-l8vnta5sp1], .col2[b-l8vnta5sp1] {
+    width: 100%;
+}
+
+    .col1 p[b-l8vnta5sp1], .col2 p[b-l8vnta5sp1] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-l8vnta5sp1] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+
+    .user-log-btn:hover[b-l8vnta5sp1] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/PostMonitoring/SelectedRentedDetails.cshtml.rz.scp.css */
+.details-border-holder[b-e4bpfulzlj] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-e4bpfulzlj] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-e4bpfulzlj] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-e4bpfulzlj], .col2[b-e4bpfulzlj] {
+    width: 100%;
+}
+
+    .col1 p[b-e4bpfulzlj], .col2 p[b-e4bpfulzlj] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-e4bpfulzlj] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+
+    .user-log-btn:hover[b-e4bpfulzlj] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/PostMonitoring/SelectedRenterDetails.cshtml.rz.scp.css */
+.details-border-holder[b-zyo48xrwn9] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-zyo48xrwn9] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-zyo48xrwn9] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-zyo48xrwn9], .col2[b-zyo48xrwn9] {
+    width: 100%;
+}
+
+    .col1 p[b-zyo48xrwn9], .col2 p[b-zyo48xrwn9] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-zyo48xrwn9] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+
+    .user-log-btn:hover[b-zyo48xrwn9] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-5jpv8no7c3] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-5jpv8no7c3] {
+  color: #0077cc;
+}
+
+.btn-primary[b-5jpv8no7c3] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-5jpv8no7c3], .nav-pills .show > .nav-link[b-5jpv8no7c3] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-5jpv8no7c3] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-5jpv8no7c3] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-5jpv8no7c3] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-5jpv8no7c3] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-5jpv8no7c3] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+/* _content/RentHive/Views/SystemManagement/HiveAdminList.cshtml.rz.scp.css */
+body[b-ondu14q7ys] {
+}
+/* _content/RentHive/Views/SystemManagement/HIveUserDetails.cshtml.rz.scp.css */
+.details-border-holder[b-yr4jr15dkr] {
+    margin: 30px 0px 30px 80px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.details-holder[b-yr4jr15dkr] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+.acc-details-content[b-yr4jr15dkr] {
+    display: flex;
+    gap: 1rem;
+}
+.col1[b-yr4jr15dkr], .col2[b-yr4jr15dkr] {
+    width: 100%;
+}
+.col1 p[b-yr4jr15dkr], .col2 p[b-yr4jr15dkr]{
+    margin: 10px;
+}
+.user-log-btn[b-yr4jr15dkr]{
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+}
+.user-log-btn:hover[b-yr4jr15dkr] {
+    background: rgba(246,186,77, 0.2);
+}
+
+/* _content/RentHive/Views/SystemManagement/HiveUserList.cshtml.rz.scp.css */
+/* _content/RentHive/Views/SystemManagement/HiveUserLog.cshtml.rz.scp.css */
+/* _content/RentHive/Views/SystemManagement/HiveUserPayment.cshtml.rz.scp.css */
+/* _content/RentHive/Views/SystemManagement/HiveUserStatus.cshtml.rz.scp.css */
+.details-border-holder[b-fuxjlupbj1] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-fuxjlupbj1] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-fuxjlupbj1] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-fuxjlupbj1], .col2[b-fuxjlupbj1] {
+    width: 100%;
+}
+
+    .col1 p[b-fuxjlupbj1], .col2 p[b-fuxjlupbj1] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-fuxjlupbj1] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-fuxjlupbj1] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/SystemManagement/UserPayment_Details.cshtml.rz.scp.css */
+.details-border-holder[b-7m9x285pkz] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-7m9x285pkz] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-7m9x285pkz] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-7m9x285pkz], .col2[b-7m9x285pkz] {
+    width: 100%;
+}
+
+    .col1 p[b-7m9x285pkz], .col2 p[b-7m9x285pkz] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-7m9x285pkz] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-7m9x285pkz] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/UserManagement/DeleteAccount.cshtml.rz.scp.css */
+.delete-logo[b-ieh00yd07i] {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: 50px auto 0px auto;
+    width: 70%;
+}
+.message[b-ieh00yd07i] {
+    margin-top: 10px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+/* _content/RentHive/Views/UserManagement/deleteAcc_Details.cshtml.rz.scp.css */
+.details-border-holder[b-xr4ku45xfr] {
+    margin-left: 80px;
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.details-holder[b-xr4ku45xfr] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.acc-details-content[b-xr4ku45xfr] {
+    display: flex;
+    gap: 1rem;
+}
+
+.col1[b-xr4ku45xfr], .col2[b-xr4ku45xfr] {
+    width: 100%;
+}
+
+    .col1 p[b-xr4ku45xfr], .col2 p[b-xr4ku45xfr] {
+        margin: 10px;
+    }
+
+.user-log-btn[b-xr4ku45xfr] {
+    background-color: transparent;
+    color: #F9B54A;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .user-log-btn:hover[b-xr4ku45xfr] {
+        background: rgba(246,186,77, 0.2);
+    }
+/* _content/RentHive/Views/UserManagement/Login.cshtml.rz.scp.css */
+.loginBox[b-ek2qsu3gor] {
+    width: 323px;
+    height: 426px;
+    left: 521px;
+    top: 90px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.04);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+}
+
+.loginInput[b-ek2qsu3gor] {
+    width: 271px;
+    height: 41px;
+    left: 0px;
+    top: 0px;
+    padding-left: 20px;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    font-family: Poppins;
+    font-weight: 300;
+    color: white;
+    border: 1px #FA701F solid;
+    font-size: 12px;
+}
+.loginBtn[b-ek2qsu3gor]{
+    width: 164px;
+    height: 41px;
+    top: 370px;
+    left: 90px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    width: 126px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+    .loginBtn:hover[b-ek2qsu3gor] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+.passwordInput[b-ek2qsu3gor] {
+    width: 271px;
+    height: 41px;
+}
+
+.password-text[b-ek2qsu3gor] {
+    width: 271px;
+    height: 41px;
+    left: 0px;
+    top: 0px;
+    padding-left: 20px;
+    font-family: Poppins;
+    font-weight: 300;
+    color: white;
+    font-size: 12px;
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+}
+
+.forgetPass[b-ek2qsu3gor] {
+    color: white;
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word;
+    text-decoration: none;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+
+
+.divForgetPass[b-ek2qsu3gor] {
+    padding-right: 20px;
+    text-align: right;
+}
+
+
+
+.animate-renthive[b-ek2qsu3gor] {
+    font-size: 40px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    background-image: linear-gradient( -225deg, #F9CF5B 15%, #F9B249 29%, #F7852C 67%, #fff800 100% );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip-b-ek2qsu3gor 2s linear infinite;
+    display: inline-block;
+}
+
+.toggle-password[b-ek2qsu3gor] {
+    position: absolute;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 79%;
+    width: 8%;
+    top: 68%;
+}
+
+.animate-admin[b-ek2qsu3gor] {
+    text-align: center;
+    color: #FF9353;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 800;
+    word-wrap: break-word;
+}
+
+@keyframes textclip-b-ek2qsu3gor {
+    to {
+        background-position: 200% center;
+    }
+}
+
+
+/*Animation for fade-in Login*/
+/*@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}*/
+
+/*Holds the logo and login form*/
+/*.Logincontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 25vh;
+}*/
+/*Border for LoginForm*/
+/*.LoginForm {
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+    height: 50vh;
+    width: 30vw;
+}*/
+/*Size of the logo*/
+/*.Loginlogo {
+    width: 100%;
+    max-width: 200px;
+}
+.InputTextbox1 {
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 200px;
+    border: none;
+    outline: none;
+}*/
+/*Animation for Login*/
+/*.TextboxHolder {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #E2A848;
+    background-color: transparent;
+    border-radius: 30px;
+    text-align: center;
+    margin: 15px 0px 0px 5px; 
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 89%;
+    width: 8%;
+}
+
+.password-text {
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 200px;
+    border: none;
+    outline: none;
+}*/
+/*Text forgot password*/
+/*._forgetpass {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: #E4A948;
+    float: right;
+}
+    ._forgetpass:hover {
+        color: white;
+    }*/
+
+/*Text typing animation */
+/*.WelcomeText {
+    margin-top: 10px;
+    font-size: 2em;
+    color: white;
+    letter-spacing: 5px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s*/ /* steps(20),cursor .4s step-end infinite alternate*/ /*;
+}
+.sub-text {
+    color: #E4A948;
+    padding: 10px 0px;
+    font-size: 12px;
+    border-right: 5px solid white;
+    letter-spacing: 5px;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s, cursor .4s step-end infinite alternate;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}*/
+/* _content/RentHive/Views/UserManagement/Profile.cshtml.rz.scp.css */
+/*Profile stylesheet*/
+.profile-holder[b-haj9zq1ooc] {
+    display: flex;
+    margin-top: 40px;
+}
+
+.column1[b-haj9zq1ooc], column2[b-haj9zq1ooc] {
+    flex: 1;
+}
+.close-button[b-haj9zq1ooc] {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.profile-card[b-haj9zq1ooc] {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: auto;
+    width: 70%;
+    top: 120px;
+}
+.upload-img-btn[b-haj9zq1ooc] {
+    text-decoration: none;
+    border: 1px solid #FA701F;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+    .upload-img-btn:hover[b-haj9zq1ooc] {
+        color: grey;
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+.profile-setting[b-haj9zq1ooc] {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+input:read-only[b-haj9zq1ooc] {
+    background-color: transparent; 
+    color: #666; 
+    cursor: auto;
+    border: 1px solid transparent; 
+    outline: none;
+}
+.profile-details[b-haj9zq1ooc] {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.col2[b-haj9zq1ooc], .col3[b-haj9zq1ooc]{
+    display: flex;
+}
+.editButton[b-haj9zq1ooc], .saveButton[b-haj9zq1ooc] {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    outline: none;
+    border:none;
+}
+
+.saveButton[b-haj9zq1ooc] {
+    background-color: green;
+    color: white;
+}
+.profile-details h5[b-haj9zq1ooc]{
+    margin-top: 10px;
+}
+
+.underlined-input[b-haj9zq1ooc] {
+    background: none; /* Removes the background */
+    border: none; /* Removes the border */
+    outline: none; /* Removes the focus highlight */
+    border-bottom: 1px solid #FA701F; /* Adds the underline */
+    padding: 5px; /* Adds some padding */
+    margin: 5px; /* Adds some margin */
+    color: white;
+}
+/* _content/RentHive/Views/UserManagement/SignUp.cshtml.rz.scp.css */
+/*Signup.cshtml stylesheet*/
+
+/*Making the form center*/
+.Registercontainer[b-tv13fgrhy5] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+/*Border for the forms;*/
+.SignupForm[b-tv13fgrhy5] {
+    margin-top: 10vh;
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+/*spacing for each textbox in form*/
+.input-box-holder[b-tv13fgrhy5] {
+    padding: 5px;
+    margin-top: 10px;
+}
+    /*div inside the input-box-holder*/
+    .user-details[b-tv13fgrhy5] {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+.InputTextbox1[b-tv13fgrhy5] {
+    font-size: 15px;
+    color: gray;
+    border: 1px solid #E2A848;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    
+    min-width: 200px;
+}
+
+/*password hide/unhide eye button*/
+.password-container[b-tv13fgrhy5] {
+    position: relative;
+  /*  font-size: 15px*/;
+    color: white;
+    border: 1px solid #E2A848;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 32%;
+    text-align: center;
+    margin-left: 5px
+}
+/*hide/unhide style*/
+.password-text[b-tv13fgrhy5] {
+    font-size: 15px;
+    color: white;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 100px;
+    border: none;
+}
+/*hide/unhide style*/
+.toggle-password[b-tv13fgrhy5] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 83%;
+    width: 8%;
+}
+

@@ -1,0 +1,130 @@
+﻿@model RentHive.Models.UserDataGetter
+@{
+    ViewData["Title"] = "Verification Center";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            @* <a href="@Url.Action("Profile", "UserManagement",new { TempuserId = Model.Acc_id})"> *@
+            <img src="~/images/logo2.png" class="user-img" />
+            @* </a> *@
+            @* <div class="user-name">
+            <h2>@Model.Acc_DisplayName</h2>
+            <p>@Model.Acc_UserType</p>
+            </div> *@
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = @ViewBag.AdminID})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement")"> @* new {Acc_id = ViewBag.Acc_id,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName
+        , Acc_DisplayName = ViewBag.Acc_DisplayName, Acc_UserType = ViewBag.Acc_UserType})'"> *@User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    <button class="close-button" onclick="location.href='@Url.Action("UserVerification", "Home", new {Acc_id = @ViewBag.AdminID})'"><img class="close-icon" src="~/images/close.png"></button>
+
+    <div class="hive-title-holder">
+        <h1>Verification List</h1>
+    </div>
+
+    <div class="details-border-holder">
+        <div class="details-holder">
+            <h3>Account Details </h3>
+            <div class="acc-details-content">
+                <div class="col1">
+                    <p>Verification ID : @Model.Ver_id</p>
+                    <p>Image :</p>
+                    <p>
+                        @if (!string.IsNullOrEmpty(Model.Images))
+                        {
+                            <img src="@($"data:image/jpeg;base64,{Model.Images}")" />
+                        }
+                        else
+                        {
+                            <img src="~/images/no-image-available.png" class="base64size" />
+                        }
+                    </p>
+                </div>
+                <div class="col2">
+                    <p>Name : @Model.Temp_FirstName &nbsp; @Model.Temp_MiddleName &nbsp; @Model.Temp_LastName</p>
+                    <p>Display Name : @Model.Temp_DisplayName</p>
+                    <p>Email : @Model.Temp_Email</p>
+                </div>
+            </div>
+        </div>
+        <div class="details-holder">
+            @if (Model.Ver_ApprovedBy == null && Model.Ver_Status == "0")
+            {
+                <form method="post" action="@Url.Action("VerificationChecker")">
+                    <input type="hidden" name="AdminID" value="@ViewBag.AdminID" />
+                    <input type="hidden" name="Ver_id" value="@Model.Ver_id" />
+
+                    <button class="user-log-btn" type="submit" name="NumHolder" value="1">Approve Request</button>
+                    <button class="user-log-btn" type="submit" name="NumHolder" value="2">Deny Request</button>
+                </form>
+            }
+            else
+            {
+                <div style="height: 100px; width:75vw; overflow-y: auto; word-wrap: break-word;">
+                    <h3>Administrator Info : @Model.Ver_ApprovedBy </h3>
+                    <div class="acc-details-content">
+                        <div class="col1">
+                            <p>Admin Name : @Model.Acc_FirstName &nbsp; @Model.Acc_MiddleName &nbsp; @Model.Acc_LastName<p>
+                        </div>
+                        <div class="col2">
+                            @if (Model.Acc_UserType != null)
+                            {
+                                <p>Position : Admin</p>
+                            }
+                            else
+                            {
+                                <p>Position : Admin</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div id="popup" class="action-button">
+    <div class="border2">
+        <h1>Log Out?</h1>
+        <div class="message">
+            <h4 style="color: white">Are you sure you want to log out?</h4>
+        </div>
+        <form method="post" action="@Url.Action("Logout", "UserManagement")">
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="#" class="btn btn-primary">No</a>
+        </form>
+    </div>
+</div>
+<div class="DataHolder">
+    <input type="hidden" name="Acc_id" value="@ViewBag.AdminID" />
+    <input type="hidden" name="Acc_FirstName" value="@ViewBag.Acc_FirstName" />
+    <input type="hidden" name="Acc_MiddleName" value="@ViewBag.Acc_MiddleName" />
+    <input type="hidden" name="Acc_LastName" value="@ViewBag.Acc_LastName" />
+    <input type="hidden" name="Acc_DisplayName" value="@ViewBag.Acc_DisplayName" />
+    <input type="hidden" name="Acc_UserType" value="@ViewBag.Acc_UserType" />
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}
+<script>
+    window.onpopstate = function () {
+        location.reload(); // Refresh the page when the back button is clicked
+    };
+</script>
+

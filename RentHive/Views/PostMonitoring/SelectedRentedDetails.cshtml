@@ -1,0 +1,237 @@
+﻿@model RentHive.Models.UserDataGetter
+@{
+    ViewData["Title"] = "Rented Goods";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            @* <a href="@Url.Action("Profile", "UserManagement",new { TempuserId = Model.Acc_id})"> *@
+            <img src="~/images/logo2.png" class="user-img" />
+            @* </a> *@
+            @* <div class="user-name">
+            <h2>@Model.Acc_DisplayName</h2>
+            <p>@Model.Acc_UserType</p>
+            </div> *@
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = ViewBag.Acc_Id})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new {Acc_id = ViewBag.Acc_id})'">User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    <button class="close-button" onclick="location.href='@Url.Action("ListOfRented", "PostMonitoring", new {Acc_id = ViewBag.Acc_Id,userId = ViewBag.userId,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName,Temp_FirstName = ViewBag.Temp_FirstName, Temp_MiddleName = ViewBag.Temp_MiddleName, Temp_LastName = ViewBag.Temp_LastName})'"><img class="close-icon" src="~/images/close.png"></button>
+
+    <div class="hive-title-holder">
+        <h1>User Rental Information</h1>
+    </div>
+
+    <div class="details-border-holder">
+        <div class="details-holder">
+            <div class="acc-details-content">
+                <h4>Rent Details</h4>
+                <div class="col1">
+                    <p>Rent Status : @Model.Post_Status</p>
+                    <p>Rate Date : @Model.Rent_Dates</p>
+                    <p>Due Date : @Model.Rent_DueDate</p>
+                    <p>Delivery : @Model.Rent_Delivery</p>
+                    <p>Delivery Status: @Model.Rent_DeliveryStatus</p>
+                </div>
+                <div class="col2">
+                    <p>Quantity : @Model.Rent_Quantity</p>
+                    @if (Model.Rent_Inventory != null)
+                    {
+                        <p>Inventory : <a href="#ViewInventory">View Inventory</a></p>
+                    }
+                    else
+                    {
+                        <p>Inventory : None</p>
+                    }
+                    <p>Return Extension : @Model.Rent_RenturnExtension</p>
+                    @if (Model.Rent_DepositReturned == "1")
+                    {
+                        <p>Deposit Returned : Returned</p>
+                    }
+                    else
+                    {
+                        <p>Deposit Returned : Not Returned</p>
+                    }
+                </div>
+            </div>
+            <div><hr /></div>
+            <div class="acc-details-content">
+                <h4>Post Detials</h4>
+                <div class="col1">
+                    <p>Title : @Model.Post_Title</p>
+                    <p>Post Period : @Model.Post_RentPeriod</p>
+                    <p>Post Terms : @Model.Post_Term</p>
+                    <p>Post Status : @Model.Post_Status</p>
+                </div>
+                <div class="col2">
+                    <p>Price : @Model.Post_Price</p>
+                    <p>Advance Deposit : @Model.Post_AdvDeposit</p>
+                    <p>Date Posted : @Model.Post_DatePosted</p>
+                </div>
+            </div>
+            <div><hr /></div>
+            <div class="acc-details-content">
+                <h4>Rental Details</h4>
+                <div class="col1">
+                    <p>Location : @Model.Rental_Location</p>
+                    <p>Rental details : @Model.Rental_Details</p>
+                    <p>Size : @Model.Rental_Size</p>
+                    <p>Category : @Model.Rental_Category</p>
+                    <p>Specification : @Model.Rental_Specification</p>
+                    <p>Amenities : @Model.Rental_Amenities</p>
+                </div>
+                <div class="col2">
+                     <p>Limit : @Model.Rental_Limit</p>
+                    <p>Condition : @Model.Rental_Conditions</p>
+                    <p>Amount : @Model.Rental_Amount</p>
+                    <p>Tag : @Model.Rental_Tag</p>
+                    <p>Type : @Model.Rental_Type</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class"printdiv">
+        <button onclick="printReport()" class="printbtn">Print</button>
+    </div>
+</div>
+
+<div id="PrintFile" class="action-button">
+    <div style="padding: 20px; width: 100%;">
+        <div class="view-container">
+            <img src="~/images/logo2.png" class="user-img" /><h3>RENTHIVE</h3>
+            <br />
+            <h5>Account name : @ViewBag.Acc_FirstName @ViewBag.Acc_MiddleName @ViewBag.Acc_LastName</h5>
+            <p>Date: @ViewBag.CurrentDate &nbsp&nbsp; Time: @ViewBag.CurrentTime</p>
+
+            <div class="details-holder" style="margin-top: 10px;">
+                <div class="acc-details-content">
+                    <h4>Rent Details</h4>
+                    <div class="col1">
+                        <p>Rent Status : @Model.Post_Status</p>
+                        <p>Rate Date : @Model.Rent_Dates</p>
+                        <p>Due Date : @Model.Rent_DueDate</p>
+                        <p>Delivery : @Model.Rent_Delivery</p>
+                        <p>Delivery Status: @Model.Rent_DeliveryStatus</p>
+                    </div>
+                    <div class="col2">
+                        <p>Quantity : @Model.Rent_Quantity</p>
+                        @if (Model.Rent_Inventory != null)
+                        {
+                            <p>Inventory : <a href="#ViewInventory">View Inventory</a></p>
+                        }
+                        else
+                        {
+                            <p>Inventory : None</p>
+                        }
+                        <p>Return Extension : @Model.Rent_RenturnExtension</p>
+                        @if (Model.Rent_DepositReturned == "1")
+                        {
+                            <p>Deposit Returned : Returned</p>
+                        }
+                        else
+                        {
+                            <p>Deposit Returned : Not Returned</p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="details-holder" style="margin-top: 10px;">
+                <div class="acc-details-content">
+                    <div class="acc-details-content">
+                        <h4>Post Detials</h4>
+                        <div class="col1">
+                            <p>Title : @Model.Post_Title</p>
+                            <p>Post Period : @Model.Post_RentPeriod</p>
+                            <p>Post Terms : @Model.Post_Term</p>
+                            <p>Post Status : @Model.Post_Status</p>
+                        </div>
+                        <div class="col2">
+                            <p>Price : @Model.Post_Price</p>
+                            <p>Advance Deposit : @Model.Post_AdvDeposit</p>
+                            <p>Date Posted : @Model.Post_DatePosted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details-holder" style="margin-top: 10px;">
+                <div class="acc-details-content">
+                    <div class="acc-details-content">
+                        <h4>Rental Details</h4>
+                        <div class="col1">
+                            <p>Location : @Model.Rental_Location</p>
+                            <p>Rental details : @Model.Rental_Details</p>
+                            <p>Size : @Model.Rental_Size</p>
+                            <p>Category : @Model.Rental_Category</p>
+                            <p>Specification : @Model.Rental_Specification</p>
+                            <p>Amenities : @Model.Rental_Amenities</p>
+                        </div>
+                        <div class="col2">
+                            <p>Limit : @Model.Rental_Limit</p>
+                            <p>Condition : @Model.Rental_Conditions</p>
+                            <p>Amount : @Model.Rental_Amount</p>
+                            <p>Tag : @Model.Rental_Tag</p>
+                            <p>Type : @Model.Rental_Type</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="author">File created by: @ViewBag.Temp_FirstName @ViewBag.Temp_MiddleName @ViewBag.Temp_LastName</div>
+        </div>
+    </div>
+</div>
+
+<div id="ViewInventory" class="action-button">
+    <div class="border2">
+        <a href="#" class="close-button"><img class="close-icon" src="~/images/close.png"></a>
+        <h3>Inventory List : </h3>
+        <div>
+            @if (Model.Rent_Inventory != null)
+            {
+                foreach (var item in Model.Rent_Inventory.Split())
+                {
+                    <p>@item<br /></p>
+                }
+            }
+            else
+            {
+                <p>None</p>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="popup" class="action-button">
+    <div class="border2">
+        <h1>Log Out?</h1>
+        <div class="message">
+            <h4 style="color: white">Are you sure you want to log out?</h4>
+        </div>
+        <form method="post" action="@Url.Action("Logout", "UserManagement")">
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="#" class="btn btn-primary">No</a>
+        </form>
+    </div>
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}<script>
+     window.onpopstate = function () {
+         location.reload(); // Refresh the page when the back button is clicked
+     };
+</script>

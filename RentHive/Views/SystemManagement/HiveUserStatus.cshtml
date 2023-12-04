@@ -1,0 +1,153 @@
+﻿@model RentHive.Models.UserDataGetter
+@{
+    ViewData["Title"] = "RentHive Users Details";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            @* <a href="@Url.Action("Profile", "UserManagement",new { TempuserId = Model.Acc_id})"> *@
+            <img src="~/images/logo2.png" class="user-img" />
+            @* </a> *@
+            @* <div class="user-name">
+            <h2>@Model.Acc_DisplayName</h2>
+            <p>@Model.Acc_UserType</p>
+            </div> *@
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = ViewBag.Acc_id})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new {Acc_id = ViewBag.Acc_id,Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName
+        , Acc_DisplayName = ViewBag.Acc_DisplayName, Acc_UserType = ViewBag.Acc_UserType})'">User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    <button class="close-button" onclick="location.href='@Url.Action("HiveUserDetails", "SystemManagement", new {Acc_id = ViewBag.Acc_id, userId = Model.Acc_id})'"><img class="close-icon" src="~/images/close.png"></button>
+
+    <div class="hive-title-holder">
+        <h1>User Account Information</h1>
+    </div>
+
+    <div class="details-border-holder">
+        <div class="details-holder">
+            <h3>Account Details : @Model.Acc_id </h3>
+            <div class="acc-details-content">
+                <div class="col1">
+                    <p>Account name : @Model.Acc_FirstName @Model.Acc_MiddleName @Model.Acc_LastName</p>
+                    <p>Display name : @Model.Acc_DisplayName</p>
+                    <p>Birthdate : @Model.Acc_Birthdate</p>
+                    <p>Address : @Model.Acc_Address</p>
+                </div>
+                <div class="col2">
+                    <p>Contact number : @Model.Acc_PhoneNum</p>
+                    <p>Email : @Model.Acc_Email</p>
+                    <p>Password : @Model.Acc_Password</p>
+                    <p>Account type: @Model.Acc_UserType</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-holder">
+            <h3>Restrict / Unrestrict this user</h3>
+            <form id="banForm" method="post" action="@Url.Action("HiveUserStatusPost1")">
+
+                <input type="hidden" name="userId" value="@Model.Acc_id" />
+                <input type="hidden" name="Acc_Ban" value="@Model.Acc_Ban" />
+
+                <input type="hidden" name="Acc_id" value="@ViewBag.Acc_Id" />
+                <p>Number of Report: @ViewBag.UserCount</p>
+                <p>Start Ban Date: @Model.Acc_BanDate &nbsp; &nbsp; End Ban Date: @Model.Acc_BanEndDate</p>
+
+                @if (Model.Acc_Ban == null || Model.Acc_Ban == "0")
+                {
+                    <button class="user-log-btn" type="submit" name="banNumHolder" value="3">Set 3 days</button>
+                }
+                else
+                {
+                    @* <input type="hidden" name="setTimeBan" value="" />
+                    <button class="user-log-btn" type="submit">Unrestrict</button> *@
+
+                    <button class="user-log-btn" type="submit">Unban</button>
+                }
+            </form>
+        </div>
+        
+        <div class="details-holder">
+            <h3>Deactivate / Delete this user</h3>
+            <form id="banForm" method="post" action="@Url.Action("HiveUserStatusPost2")">
+
+                <input type="hidden" name="userId" value="@Model.Acc_id" />
+                <input type="hidden" name="Acc_id" value="@ViewBag.Acc_Id" />
+
+                @if (Model.Acc_Active == 1)
+                {
+                    <button class="user-log-btn" type="submit" name="NumHolder" value="1">Deactivate</button>
+                }
+                else
+                {
+                    <button class="user-log-btn" type="submit" name="NumHolder" value="2">Activate</button>
+                }
+            </form>
+            @* @if (Model.Acc_Active == 1)
+            {
+                //if status is active (1) and want to deactivate(0)
+                <form method="post" action="@Url.Action("HiveUserStatusPost2", new { })">
+                    <button class="user-log-btn" type="submit">Deactivate</button>
+                    <button class="user-log-btn" style="display:none;">Activate</button>
+                </form>
+            }
+            else
+            {
+                //else if status is deactivate (0) and want to make it activate(1)
+                <form method="post" action="@Url.Action("HiveUserStatusPost2", new { userID = Model.Acc_id, status = Model.Acc_Active, Acc_id = ViewBag.Acc_id, Acc_FirstName = ViewBag.Acc_FirstName, Acc_MiddleName = ViewBag.Acc_MiddleName, Acc_LastName = ViewBag.Acc_LastName, Acc_DisplayName = ViewBag.Acc_DisplayName, Acc_UserType = ViewBag.Acc_UserType })">
+                    <button class="user-log-btn" type="submit">Activate</button>
+                    <button class="user-log-btn" style="display:none;">Deactivate</button>
+                </form>
+            } *@
+        </div>
+    </div>
+</div>
+<div id="popup" class="action-button">
+    <div class="border2">
+        <h1>Log Out?</h1>
+        <div class="message">
+            <h4 style="color: white">Are you sure you want to log out?</h4>
+        </div>
+        <form method="post" action="@Url.Action("Logout", "UserManagement")">
+            <button type="submit" class="btn btn-danger">Yes</button>
+            <a href="#" class="btn btn-primary">No</a>
+        </form>
+    </div>
+</div>
+<div class="DataHolder">
+    <input type="hidden" name="Acc_id" value="@ViewBag.Acc_Id" />
+    <input type="hidden" name="Acc_FirstName" value="@ViewBag.Acc_FirstName" />
+    <input type="hidden" name="Acc_MiddleName" value="@ViewBag.Acc_MiddleName" />
+    <input type="hidden" name="Acc_LastName" value="@ViewBag.Acc_LastName" />
+    <input type="hidden" name="Acc_DisplayName" value="@ViewBag.Acc_DisplayName" />
+    <input type="hidden" name="Acc_UserType" value="@ViewBag.Acc_UserType" />
+</div>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}
+<script>
+    window.onpopstate = function () {
+        location.reload(); // Refresh the page when the back button is clicked
+    };
+
+    /*function submitWeekBanForm() {
+        // Submit the weekBanUser form
+        document.getElementById("weekBanUser").submit();
+    }*/
+</script>

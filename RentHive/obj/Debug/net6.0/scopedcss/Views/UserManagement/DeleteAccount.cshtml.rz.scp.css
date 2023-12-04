@@ -1,0 +1,14 @@
+.delete-logo[b-ieh00yd07i] {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: 50px auto 0px auto;
+    width: 70%;
+}
+.message[b-ieh00yd07i] {
+    margin-top: 10px;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}

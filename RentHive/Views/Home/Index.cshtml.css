@@ -1,0 +1,144 @@
+﻿.show_btn {
+    width: 221px;
+    height: 36px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+
+
+    .show_btn:hover {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.show_btn2 {
+    width: 221px;
+    height: 36px;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+    .show_btn2:hover {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.editProfile_btn {
+    width: 296px;
+    height: 36px;
+    color: white;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+}
+
+    .editProfile_btn:hover {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.unresolvedReports, .deactivatedAcc, .deactivatedPost, .bannedUser {
+    height: 113px;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin: 10px;
+}
+
+    .unresolvedReports:hover, .deactivatedAcc:hover, .deactivatedPost:hover, .bannedUser:hover {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.DisplayData {
+    margin-top: 25px;
+    width: 323px;
+    height: 18px;
+    text-align: center;
+    color: #FA701F;
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Email, .ContactNo, .Birthdate, .Address {
+    color: white;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.Email-details, .Contact-details, .Birthdate-details, .Address-details {
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+.date {
+    width: 300px;
+    height: 143px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.time {
+    width: 167px;
+    height: 34px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.dateBorder {
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    height: 380px;
+    padding-top: 60px;
+}

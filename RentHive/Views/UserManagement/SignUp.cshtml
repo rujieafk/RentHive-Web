@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Sign up";
+}
+
+<div class="Registercontainer">
+    <form method="post" onsubmit="return validatePassword() && return checkPasswordMatch();">
+
+        <input type="hidden" name="Acc_id" value="@ViewBag.Acc_id" />
+
+        <div class="SignupForm">
+            <div>
+                <div>
+                    <h1>Register</h1>
+                    <h5>Enroll a New Administrator</h5>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="Acc_UserType" value="SuperAdmin">
+                        Super Admin
+                    </label>
+                    <label>
+                        <input type="checkbox" name="Acc_UserType" value="Admin">
+                        Admin
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-box-holder">
+                <div class="user-details">
+                    <input name="Acc_FirstName" class="InputTextbox1" type="text" placeholder="First Name" required />
+                    <input name="Acc_MiddleName" class="InputTextbox1" type="text" placeholder="Middle Name"  />
+                    <input name="Acc_LastName" class="InputTextbox1" type="text" placeholder="Last Name" required />
+                </div>
+            </div>
+
+            <div class="input-box-holder">
+                <div class="user-details">
+                    <input name="Acc_Birthdate" class="InputTextbox1" type="date" required />
+                    <input type="text" name="Acc_PhoneNum" class="InputTextbox1" minlength="11" maxlength="11" placeholder="09xxxxxxxxx" pattern="[0-9]+" required>
+                    <input name="Acc_Address" class="InputTextbox1" type="text" placeholder="Address" required />
+                </div>
+            </div>
+
+            <div class="input-box-holder">
+                    <input name="Acc_DisplayName" class="InputTextbox1" type="text" placeholder="Display Name" required />
+            </div>
+
+
+            <div class="input-box-holder">
+                <div class="user-details">
+                    <input name="Acc_Email" class="InputTextbox1" type="email" placeholder="Email" required />
+                    <div class="password-container">
+                        <input type="password"
+                               class="password-text"
+                               id="password"
+                               name="Acc_Password"
+                               placeholder="Password"
+                               required
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                               title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+                        <span class="toggle-password" id="togglePassword">
+                            <img src="~/images/visible.png" id="showIcon" class="show-icon" />
+                            <img src="~/images/hide.png" class="hide-icon" id="hideIcon" />
+                        </span>
+                    </div>
+                   @*  <input id ="confirm_password" name="confirm_password" class="InputTextbox1" type="password" placeholder="Re-enter Password" required /> *@
+                </div>
+            </div>
+@* 
+            <p id="passwordMessage" style="color: red;"></p> *@
+            <div class="input-box-holder">
+                <button type="submit" class="myButton">Submit</button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <p>
+                    Return to <a method="Post" type="button" class="text" href="#popup">Profile</a>
+                </p>
+            </div>
+
+            <div id="popup" class="action-button">
+                <div class="border2">
+                    <h4>Are you sure you want to leave this page?</h4>
+                    <div class="message">
+                        <h6>Changes you made may not be saved.</h6>
+                    </div>
+                    <form method="post">
+
+                        <a href="@Url.Action("Profile", "UserManagement", new{Acc_id = ViewBag.Acc_id})" class="btn btn-danger">Leave without saving</a>
+                        <a href="#" class="btn btn-primary">Return</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+ <script>
+
+    //re-enter password checking
+    function checkPasswordMatch() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm_password").value;
+
+        if (password !== confirmPassword) {
+            document.getElementById("passwordMessage").textContent = "Passwords do not match!";
+            return false;
+        } else {
+
+            // Submit form or further processing
+            return true;
+        }
+    }
+        
+
+        function validatePassword() {
+            // Get the password input and message element
+            const passwordInput = document.getElementById('password');
+            const passwordMessage = document.getElementById('passwordMessage');
+            const password = passwordInput.value;
+
+            // Define your password validation criteria
+            const minLength = 8;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumber = /\d/.test(password);
+            const hasSpecialCharacter = /[!#$%^&*]/.test(password);
+
+            // Check if the password meets the criteria
+            if (password.length < minLength) {
+                passwordMessage.textContent = 'Password must be at least 8 characters long.';
+                passwordInput.focus();
+                return false;
+            } else if (!(hasUpperCase && hasLowerCase && hasNumber && hasSpecialCharacter)) {
+                passwordMessage.textContent = 'Password must include at least one uppercase letter, one lowercase letter, one number, and one special character.';
+                passwordInput.focus();
+                return false;
+            }
+
+            
+            return true;
+        }
+    </script>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}

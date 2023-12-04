@@ -1,0 +1,216 @@
+﻿@model RentHive.Models.UserDataGetter 
+@{
+    ViewData["Title"] = "Profile";
+}
+<div class="home-index">
+    <div class="side-nav">
+        <div class="user">
+            @* <a href="@Url.Action("Profile", "UserManagement",new { TempuserId = Model.Acc_id})"> *@
+            <img src="~/images/logo2.png" class="user-img" />
+            @* </a> *@
+            @* <div class="user-name">
+            <h2>@Model.Acc_DisplayName</h2>
+            <p>@Model.Acc_UserType</p>
+            </div> *@
+        </div>
+
+        <ul class="menu-list">
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/dashboard.png" /><a class="menu-text" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = Model.Acc_id})'">Home</a>
+            </li>
+            <li class="menu-item">
+                <img class="menu-icon" src="~/images/group.png" /><a class="menu-text" onclick="location.href='@Url.Action("HiveUserList", "SystemManagement", new {Acc_id = Model.Acc_id,Acc_FirstName = Model.Acc_FirstName, Acc_MiddleName = Model.Acc_MiddleName, Acc_LastName = Model.Acc_LastName
+        , Acc_DisplayName = Model.Acc_DisplayName, Acc_UserType = Model.Acc_UserType})'">User List</a>
+            </li>
+        </ul>
+
+        <ul class="menu-list">
+            <li class="menu-item"><img class="menu-icon" src="~/images/logout.png" /><a href="#popup" class="menu-text">Logout</a></li>
+        </ul>
+    </div>
+    @*     <button class="close-button" onclick="location.href='@Url.Action("Index", "Home", new {Acc_id = Model.Acc_id})'">
+    <img class="notification-icon" src="~/images/close.png" alt="Close">
+    </button> *@
+</div>
+<div class="profile-holder">
+    <div class="column1">
+        <div class="profile-card">
+            <img src="~/images/logo_name.png" style="width: 100px; height: auto;" /><br />
+            <h3>@Model.Acc_FirstName @Model.Acc_MiddleName @Model.Acc_LastName</h3>
+            <p>@Model.Acc_DisplayName</p>
+
+            @if (!string.IsNullOrEmpty(Model.Images))
+            {
+                byte[] imageBytes = Convert.FromBase64String(Model.Images);
+                string imageSrc = string.Format("data:image/png;base64,{0}", Convert.ToBase64String(imageBytes));
+                <img  id="previewImage" src="@imageSrc" style="border-radius: 50%; width: 150px; height: 150px;" alt="User Image" />
+@*                 <img style="max-width: 100%; max-height: 200px; margin-top: 10px; display: none;" /> *@
+            }
+            else
+            {
+                <img id="img" src="~/images/user.png" style="border-radius: 50%; width: 150px; height: 150px;" />
+            }
+
+            @* <form action="Profile" method="post" enctype="multipart/form-data" id="profileForm">
+                <p>@Model.Acc_UserType</p>
+                <input type="hidden" name="Acc_id" value="@Model.Acc_id" />
+                <input style="width: 200px;" id="input" name="file" type="file" required />
+                <button type="submit" name="NumHolder" value="1" id="saveImageButton" style="display: none;">Save Image</button>
+            </form> *@
+
+            @* <form action="Profile" method="post" enctype="multipart/form-data" id="profileForm">
+                <center>@Model.Acc_UserType</center>
+                <input type="hidden" name="Acc_id" value="@Model.Acc_id" />
+                <input style="width: 110px;" id="input" name="file" type="file" required />
+                <button type="submit" name="NumHolder" value="1" id="saveImageButton" style="display: none;">Save Image</button>
+            </form> *@
+
+            <form action="Profile" method="post" enctype="multipart/form-data" id="profileForm">
+                <center>@Model.Acc_UserType</center>
+                <input type="hidden" name="Acc_id" value="@Model.Acc_id" />
+                <input style="width: 110px;" id="input" name="file" type="file" required />
+                <button type="submit" name="NumHolder" value="1" id="saveImageButton" style="display: none;">Save Image</button>
+            </form>
+
+
+        </div>
+        <div class="profile-setting">
+            <h3>Settings</h3>
+            <div>
+                @if (Model.Acc_UserType == "Admin")
+                {
+                    <a class="text" asp-controller="UserManagement" asp-action="DeleteAccount" asp-route-TempuserId="@Model.Acc_id" hidden>Delete Account</a>                    
+                }
+                else
+                {
+                    <a class="text" asp-controller="UserManagement" asp-action="DeleteAccount" asp-route-TempuserId="@Model.Acc_id">Delete Account</a>
+                }
+            </div>
+            <div><a class="text" href="@Url.Action("deletedAcc", new {Acc_id = Model.Acc_id})">Deleted Accounts</a></div>
+            <div>
+                @if (Model.Acc_UserType == "Admin")
+                {
+                    <a class="text" asp-controller="UserManagement" asp-action="Signup" asp-route-TempuserId="@Model.Acc_id" hidden>Enroll New Administrator</a>
+                }
+                else
+                {
+                    <a class="text" asp-controller="UserManagement" asp-action="Signup" asp-route-TempuserId="@Model.Acc_id">Enroll New Administrator</a>
+                }    
+            </div>
+
+            <div><a class="text" href="@Url.Action("AdminLog", new {Acc_id = Model.Acc_id})">Admin Log</a></div>
+            <div><a type="button" class="text" href="#popup">Logout</a></div>
+        </div>
+    </div>
+    <div class="column2">
+        <div class="profile-details">
+            <form asp-action="Profile" method="post">
+                <h3>Account Details</h3>
+
+                <input type="hidden" name="Acc_id" value="@Model.Acc_id" />
+
+                <div class="col1">
+                    <h5>Display Name</h5>
+                    <input id="userDisplayName" name="Acc_DisplayName" value="@Model.Acc_DisplayName" class="underlined-input" readonly />
+                </div>
+
+                <div class="col2">
+                    <div>
+                        <h5>First Name</h5>
+                        <input id="userFirstName" name="Acc_FirstName" value="@Model.Acc_FirstName" class="underlined-input" readonly />
+                    </div>
+                    <div>
+                        <h5>Middle Name</h5>
+                        <input id="userMiddleName" name="Acc_MiddleName" value="@Model.Acc_MiddleName" class="underlined-input" readonly />
+                    </div>
+                    <div>
+                        <h5>Last Name </h5>
+                        <input id="userLastName" name="Acc_LastName" value="@Model.Acc_LastName" class="underlined-input" readonly />
+                    </div>
+                </div>
+
+                <div class="col3">
+                    <div>
+                        <h5>Contact Number</h5>
+                        <input id="userPhoneNum" name="Acc_PhoneNum" value="@Model.Acc_PhoneNum" class="underlined-input" readonly />
+                    </div>
+                    <div>
+                        <h5>Birthdate</h5>
+                        <input id="userBirthDate" name="Acc_Birthdate" value="@Model.Acc_Birthdate" class="underlined-input" readonly />
+                    </div>
+                    <div>
+                        <h5>Address </h5>
+                        <input id="userAddress" name="Acc_Address" value="@Model.Acc_Address" class="underlined-input" readonly />
+                    </div>
+                </div>
+                <div>
+                    <h5>Email</h5>
+                    <input id="userEmail" name="Acc_Email" type="email" class="underlined-input" value="@Model.Acc_Email" readonly />
+                </div>
+                <div>
+                    <h5>Password</h5>
+                    <input id="userPassword" name="Acc_Password" type="password" class="underlined-input" value="@Model.Acc_Password" readonly />
+                </div>
+                <div>
+                    <button type="button" class="editButton">Edit</button>
+                    <button type="submit" class="saveButton" style="display: none" name="NumHolder" value="2">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="popup" class="action-button">
+        <div class="border2">
+            <h1>Log Out?</h1>
+            <div class="message">
+                <h4 style="color: white">Are you sure you want to log out?</h4>
+            </div>
+            <form method="post" action="@Url.Action("Logout", "UserManagement")">
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a href="#" class="btn btn-primary">No</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    let img = document.getElementById('img');
+    let input = document.getElementById('input');
+
+    input.onchange = (e) => {
+        if (input.files[0]) {
+            img.src = URL.createObjectURL(input.files[0]);
+        }
+    }
+
+    var fileInput = document.getElementById('input');
+    var saveButton = document.getElementById('saveImageButton');
+    var previewImage = document.getElementById('previewImage');
+
+    fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+
+            fileInput.style.display = 'none';
+            previewImage.style.display = 'block';
+            saveButton.style.display = 'block';
+        } else {
+            fileInput.style.display = 'block';
+            previewImage.style.display = 'none';
+            saveButton.style.display = 'none';
+        }
+    });
+</script>
+@if (ViewBag.ErrorMessage != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.ErrorMessage");
+        }
+    </script>
+}

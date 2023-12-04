@@ -1,0 +1,102 @@
+/*Profile stylesheet*/
+.profile-holder[b-haj9zq1ooc] {
+    display: flex;
+    margin-top: 40px;
+}
+
+.column1[b-haj9zq1ooc], column2[b-haj9zq1ooc] {
+    flex: 1;
+}
+.close-button[b-haj9zq1ooc] {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.profile-card[b-haj9zq1ooc] {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    margin: auto;
+    width: 70%;
+    top: 120px;
+}
+.upload-img-btn[b-haj9zq1ooc] {
+    text-decoration: none;
+    border: 1px solid #FA701F;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+    .upload-img-btn:hover[b-haj9zq1ooc] {
+        color: grey;
+        border: 1px solid grey;
+        cursor: pointer;
+    }
+.profile-setting[b-haj9zq1ooc] {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+input:read-only[b-haj9zq1ooc] {
+    background-color: transparent; 
+    color: #666; 
+    cursor: auto;
+    border: 1px solid transparent; 
+    outline: none;
+}
+.profile-details[b-haj9zq1ooc] {
+    border: 1px solid #FA701F;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.col2[b-haj9zq1ooc], .col3[b-haj9zq1ooc]{
+    display: flex;
+}
+.editButton[b-haj9zq1ooc], .saveButton[b-haj9zq1ooc] {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    outline: none;
+    border:none;
+}
+
+.saveButton[b-haj9zq1ooc] {
+    background-color: green;
+    color: white;
+}
+.profile-details h5[b-haj9zq1ooc]{
+    margin-top: 10px;
+}
+
+.underlined-input[b-haj9zq1ooc] {
+    background: none; /* Removes the background */
+    border: none; /* Removes the border */
+    outline: none; /* Removes the focus highlight */
+    border-bottom: 1px solid #FA701F; /* Adds the underline */
+    padding: 5px; /* Adds some padding */
+    margin: 5px; /* Adds some margin */
+    color: white;
+}

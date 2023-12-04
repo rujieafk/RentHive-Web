@@ -1,0 +1,144 @@
+.show_btn[b-xlcmrfej9m] {
+    width: 221px;
+    height: 36px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+
+
+    .show_btn:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.show_btn2[b-xlcmrfej9m] {
+    width: 221px;
+    height: 36px;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+    .show_btn2:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.editProfile_btn[b-xlcmrfej9m] {
+    width: 296px;
+    height: 36px;
+    color: white;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+}
+
+    .editProfile_btn:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.unresolvedReports[b-xlcmrfej9m], .deactivatedAcc[b-xlcmrfej9m], .deactivatedPost[b-xlcmrfej9m], .bannedUser[b-xlcmrfej9m] {
+    height: 113px;
+    background: rgba(250, 112, 31, 0.50);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin: 10px;
+}
+
+    .unresolvedReports:hover[b-xlcmrfej9m], .deactivatedAcc:hover[b-xlcmrfej9m], .deactivatedPost:hover[b-xlcmrfej9m], .bannedUser:hover[b-xlcmrfej9m] {
+        background-color: #F5721F;
+        color: white;
+        transition: 0.3s;
+    }
+
+.DisplayData[b-xlcmrfej9m] {
+    margin-top: 25px;
+    width: 323px;
+    height: 18px;
+    text-align: center;
+    color: #FA701F;
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.box[b-xlcmrfej9m] {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Email[b-xlcmrfej9m], .ContactNo[b-xlcmrfej9m], .Birthdate[b-xlcmrfej9m], .Address[b-xlcmrfej9m] {
+    color: white;
+    font-size: 12px;
+    font-family: Poppins;
+    font-weight: 500;
+    word-wrap: break-word
+}
+
+.Email-details[b-xlcmrfej9m], .Contact-details[b-xlcmrfej9m], .Birthdate-details[b-xlcmrfej9m], .Address-details[b-xlcmrfej9m] {
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 10px;
+    font-family: Poppins;
+    font-weight: 300;
+    word-wrap: break-word;
+}
+
+.date[b-xlcmrfej9m] {
+    width: 300px;
+    height: 143px;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word;
+}
+
+.time[b-xlcmrfej9m] {
+    width: 167px;
+    height: 34px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    font-weight: 700;
+    word-wrap: break-word
+}
+
+.dateBorder[b-xlcmrfej9m] {
+    background: rgba(250, 112, 31, 0.05);
+    border-radius: 22px;
+    border: 1px #FA701F solid;
+    height: 380px;
+    padding-top: 60px;
+}

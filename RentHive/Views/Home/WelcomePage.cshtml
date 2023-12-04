@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Welcome to RentHive";
+}
+<div id="fade-out">
+    <div class="CenterLogo">
+        <img src="~/images/logo.png" class="logo" />
+    </div>
+    <div class="text">
+        <p>Welcome to RentHive!</p>
+    </div>
+</div>
+
+<script>
+
+    // Add if-else statement
+    // if the user is already login direct to Dashboard or Index.cshtml
+    // else redirect to Login
+
+    setTimeout(function () {
+        window.location.href = '@Url.Action("Login", "UserManagement")';
+    }, 3000); // Change the time as needed (in milliseconds)
+</script>

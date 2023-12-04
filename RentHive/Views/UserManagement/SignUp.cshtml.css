@@ -1,0 +1,73 @@
+﻿/*Signup.cshtml stylesheet*/
+
+/*Making the form center*/
+.Registercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+}
+/*Border for the forms;*/
+.SignupForm {
+    margin-top: 10vh;
+    border: 1px solid #E2A848;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+/*spacing for each textbox in form*/
+.input-box-holder {
+    padding: 5px;
+    margin-top: 10px;
+}
+    /*div inside the input-box-holder*/
+    .user-details {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+.InputTextbox1 {
+    font-size: 15px;
+    color: gray;
+    border: 1px solid #E2A848;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    
+    min-width: 200px;
+}
+
+/*password hide/unhide eye button*/
+.password-container {
+    position: relative;
+  /*  font-size: 15px*/;
+    color: white;
+    border: 1px solid #E2A848;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 32%;
+    text-align: center;
+    margin-left: 5px
+}
+/*hide/unhide style*/
+.password-text {
+    font-size: 15px;
+    color: white;
+    padding: 5px 5px 5px 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    width: 100%;
+    min-width: 100px;
+    border: none;
+}
+/*hide/unhide style*/
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 50px;
+    cursor: pointer;
+    left: 83%;
+    width: 8%;
+}
+
